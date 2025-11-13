@@ -1,0 +1,98 @@
+
+KURAL -1
+package main // Programın çalıştırılabilir olduğunu belirtir. Derleyiciye “bu dosyadan başla” demek
+
+import "fmt" // format Standart giriş/çıkış (I/O) paketi - Ekrana yazı yazmak, veri almak, biçimlendirme yapmak için kullanılır
+
+func main() {
+	fmt.Println("'Hello world'")
+}
+
+1. package main ne zaman GEREKLİDİR?
+Eğer çalıştırılabilir bir program (örneğin bir terminal uygulaması, web sunucusu, vs.) yazıyorsan, evet, package main gereklidir.
+
+Go derleyicisi şunu yapar:
+go run dosya.go veya go build komutunu çalıştırdığında,
+package main olan dosyaları arar,
+func main() fonksiyonunu bulur ve programı oradan başlatır.
+
+Çalıştırılabilir bir uygulama = package main + func main()
+
+KURAL -2
+2. package main ne zaman GEREKSİZ (ya da yanlış) olur?
+Eğer bir kütüphane (library) yazıyorsan — yani başka dosyalar veya projeler tarafından kullanılacak bir kod yazıyorsan —
+o zaman package main değil, kendi paket adını kullanırsın.
+
+Örnek:
+package hesaplama
+func Topla(a int, b int) int {
+    return a + b
+}
+
+Bu dosyayı hesaplama.go olarak kaydedebilirsin.
+Sonra başka bir dosyada şöyle kullanırsın:
+
+package main
+import (
+    "fmt"
+    "example.com/projem/hesaplama"
+)
+func main() {
+    sonuc := hesaplama.Topla(5, 7)
+    fmt.Println("Sonuç:", sonuc)
+}
+
+KISACA
+| Amaç | Paket adı | Açıklama |
+| -------------------------------------------- | -------------- | --------------------- |
+| Uygulama (çalıştırılabilir) | `package main` | `func main()` zorunlu |
+| Kütüphane / Modül (başkaları kullansın diye) | `package isim` | `func main()` olmaz |
+
+Program yazıyorsan: package main
+Kütüphane / modül yazıyorsan: kendi paket adın (package hesaplama, package utils vs.)
+*/
+
+package main
+import "fmt"
+
+func main() {
+	fmt.Println("'Hello world'")
+}
+
+YORUM SATIRLARI NASIL OLMALI????
+
+| Kural                                      | Açıklama                                                   |
+| ------------------------------------------ | ---------------------------------------------------------- |
+| Yorum **tanımın hemen üstünde** olmalı     | Araya boş satır girmemeli                                  |
+| Yorum **tanımla aynı kelimeyle başlamalı** | `Topla` fonksiyonu → yorum “**Topla** ...” ile başlamalı   |
+| `/* ... */` yerine `//` kullanılır         | Çok satırlı açıklama da olsa, her satır `//` ile başlamalı |
+| Yazım sade, üçüncü tekil şahıs olmalı      | “Topla iki sayıyı döndürür.” (emir değil, tanım biçimi)    |
+
+
+1.ornek
+// Package hesaplama basit matematiksel işlemler için yardımcı fonksiyonlar sağlar.
+package hesaplama
+
+// Topla verilen iki sayıyı toplar ve sonucu döndürür.
+func Topla(a int, b int) int {
+    return a + b
+}
+
+// Cikar verilen iki sayının farkını döndürür.
+func Cikar(a int, b int) int {
+    return a - b
+}
+
+// Pi sabiti, yaklaşık olarak 3.14’tür.
+const Pi = 3.14
+
+
+2.ornek
+
+// Package utils genel amaçlı yardımcı fonksiyonları içerir.
+package utils
+
+// Yazdir ekrana formatlı bir şekilde mesaj yazar.
+func Yazdir(msg string) {
+    fmt.Println(">>", msg)
+}
