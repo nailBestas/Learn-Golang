@@ -70,6 +70,7 @@ func main() {
 	fmt.Println("x in yeni degeri :", x)
 
 	// Fonksiyon tipi
+	//fonksyionlari degiskenler turmak
 	//carpma adında bir değişken oluştur
 	// türü → Hesaplayici olsun
 	//içeriği → bir fonksiyon olsun
@@ -79,5 +80,23 @@ func main() {
 	}
 	sonuc := carp(10, 20)
 	fmt.Println("Fonksiyon tipi sonucu: ", sonuc)
+
+	// fonksioyn ismi icin farkli bir ornek
+	//Fonksiyon tipini tanımlayalım:
+
+	type Islem func(int, int) int
+
+	//İki farklı fonksiyon:
+
+	carp := func(a, b int) int { return a * b }
+	cikar := func(a, b int) int { return a - b }
+
+	//Hepsi Islem tipinde olabilir:
+
+	var i1 Islem = carp
+	var i2 Islem = cikar
+
+	fmt.Println(i1(3, 4))  // 12
+	fmt.Println(i2(10, 3)) // 7
 
 }
