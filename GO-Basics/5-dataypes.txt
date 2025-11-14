@@ -1,0 +1,161 @@
+DATA TYPE (VERİ TİPİ) NEDİR?
+
+Go’da bir değişken oluşturduğunda şunu belirtirsin:
+
+“Bu değişken ne tür veri tutacak?”
+
+Örnek:
+
+var yas int = 25 tamsayi
+
+
+Burada int bir data type (veri tipi).
+
+🟦 GO'NUN ANA VERİ TİPLERİ
+
+Go'da veri tipleri 6 ana kategoriye ayrılır.
+
+1️⃣ Temel (Primitive) Veri Tipleri
+✔️ Number (Sayı) Tipleri
+🔸 Tam sayılar (Integer)
+
+int
+
+int8
+
+int16
+
+int32
+
+int64
+
+En çok kullanılan: int
+
+Örnek:
+
+var sayi int = 10
+
+🔸 Pozitif tam sayılar (Unsigned)
+
+uint
+
+uint8
+
+uint16
+
+uint32
+
+uint64
+
+🔸 Ondalıklı sayılar (Float)
+
+float32
+
+float64
+
+Örnek:
+
+var pi float = 3.14
+
+✔️ String
+
+Metin tutar:
+
+var ad string = "Nail"
+
+✔️ Boolean
+
+true veya false
+
+var aktif bool = true
+
+2️⃣ Karmaşık Sayı Tipleri (Complex Numbers)
+
+complex64
+
+complex128
+
+Çok kullanılmaz ama Go destekler.
+
+3️⃣ Derived (Türetilmiş) Tipler
+
+Bunlar birden fazla veriyi bir araya getiren yapılardır.
+
+✔️ Array
+
+Sabit boyutlu liste.
+
+var sayilar [3]int = [3]int{1, 2, 3}
+
+✔️ Slice
+
+Dinamik liste (en çok kullanılan!)
+
+isimler := []string{"Ali", "Veli", "Ayşe"}
+
+✔️ Map
+
+Key → Value yapısı (sözlük)
+
+ogrenci := map[string]int{
+    "Ali": 20,
+    "Veli": 22,
+    "Nafiz":18
+}
+
+4️⃣ Struct    
+
+Kendin özel veri yapısı oluşturursun.
+
+type Kisi struct {
+    Ad  string
+    Yas int
+}
+
+type eruh-okul struct{
+    ad string
+    tarih datatime
+}
+
+5️⃣ Pointer
+
+Bellek adresini tutan tip.
+
+var x int = 10
+var p *int = &x
+
+6️⃣ Function Types
+
+Fonksiyonların kendisi de bir veri tipidir!
+
+var f func(int) int
+
+🟧 Özet Tablo
+Kategori	Örnek Tipler
+Sayılar	int, float64
+Metin	string
+Mantık	bool
+Liste	array, slice
+Sözlük	map
+Veri yapısı	struct
+Adres	pointer
+Fonksiyon	func
+🟩 EN KISA ÖZET
+
+Go'da veri tipleri şu soruyu cevaplar:
+
+Bu değişken ne tür bilgi tutuyor?
+
+sayı → int, float64
+
+metin → string
+
+mantık → bool
+
+liste → slice
+
+sözlük → map
+
+yapı → struct
+
+adres → pointer
