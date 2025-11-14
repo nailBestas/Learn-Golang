@@ -88,15 +88,37 @@ func main() {
 
 	//İki farklı fonksiyon:
 
-	carp := func(a, b int) int { return a * b }
+	carp1 := func(a, b int) int { return a * b }
 	cikar := func(a, b int) int { return a - b }
 
 	//Hepsi Islem tipinde olabilir:
 
-	var i1 Islem = carp
+	var i1 Islem = carp1
 	var i2 Islem = cikar
 
 	fmt.Println(i1(3, 4))  // 12
 	fmt.Println(i2(10, 3)) // 7
+
+
+
+	// Normal fonksiyon
+func topla(a, b int) int {
+    return a + b
+}
+
+// Fonksiyon değişkene atanmış
+topla := func(a, b int) int {
+    return a + b
+}
+
+//Fonksiyon tipi ile atanmış
+type Hesaplayici func(int, int) int
+
+var topla Hesaplayici = func(a, b int) int {
+    return a + b
+}
+
+
+//Üçü de aynı işi yapar.
 
 }
