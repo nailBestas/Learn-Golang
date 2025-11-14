@@ -102,7 +102,7 @@ func main() {
 
 
 	// Normal fonksiyon
-func topla(a, b int) int {
+func topla(a int,b int) int {
     return a + b
 }
 
