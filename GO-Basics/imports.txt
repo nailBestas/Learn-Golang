@@ -1,0 +1,129 @@
+GO’DA import NEDİR?
+
+import, başka paketleri programa eklemek için kullanılan anahtar kelimedir.
+
+Örneğin:
+
+import "fmt"
+
+
+
+🔥 NEDEN ÖNEMLİDİR?
+1️⃣ Başka paketlerden fonksiyon ve tipleri kullanmak için zorunludur
+
+Örnek:
+
+fmt paketini import etmezsen:
+
+fmt.Println("merhaba")
+
+
+şu hatayı alırsın:
+
+undefined: fmt
+
+2️⃣ Go programını modüllere ayırır → Temiz ve düzenli kod
+
+Projeni paketlere bölebilirsin:
+
+project/
+  main.go
+  utils/
+    hesap.go
+
+
+main.go:
+
+import "project/utils"
+
+
+Modüler kod → büyük projelerde şarttır.
+
+3️⃣ Go derleyicisi kullanılmayan importları engeller
+
+Go’nun en önemli kurallarından biri:
+
+Kullanmadığın import’a izin verilmez.
+
+Örnek:
+
+import "fmt" // fakat fmt hiç kullanılmıyor
+
+
+→ Hata verir:
+
+imported and not used: "fmt"
+
+
+Bu, kodun temiz kalmasını sağlar.
+
+4️⃣ Standard library + Harici paketlerin kapısıdır
+
+import sayesinde:
+
+✔️ Standart kütüphane paketleri
+✔️ Kendi paketlerin
+✔️ Harici paketler (ör: Gin, Fiber, Gorilla Mux)
+
+hepsini kullanabilirsin.
+
+Örneğin web framework:
+
+import "github.com/gin-gonic/gin"
+
+📦 Import Türleri (Önemli!)
+1️⃣ Normal import
+import "fmt"
+
+2️⃣ Birden fazla import
+import (
+    "fmt"
+    "os"
+    "strings"
+)
+
+3️⃣ Alias (takma ad)
+import f "fmt"
+
+f.Println("selam")
+
+4️⃣ Sadece init() fonksiyonları için import (blank import)
+import _ "github.com/mattn/go-sqlite3"
+
+
+Bu durumda paket kullanılmaz ama init() çalışır (örneğin DB driver’i).
+
+🎯 ÖZET
+Görev	                                        Önemi
+Paketleri programa dahil eder	                Zorunlu
+Kodun modüler olmasını sağlar	                Yüksek
+Standart + harici paketleri kullanmanı sağlar	Kritik
+Kullanılmayan import’a izin vermez	          Kod temizliği
+
+
+
+
+package utils
+
+func SelamVer() string {
+	return "Utils paketinden selam!"
+}
+
+
+
+
+package main
+
+import (
+	"fmt"
+	"proje/utils"
+)
+
+func main() {
+	mesaj := utils.SelamVer()
+	fmt.Println(mesaj)
+}
+
+go mod init projem
+go mod tidy
+go run .
