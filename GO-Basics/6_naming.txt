@@ -81,5 +81,17 @@
 
 
 
+| Kavram                 | Örnek                                   | Kurala Uygunluk                          |
+| ---------------------- | --------------------------------------- | ---------------------------------------- |
+| Paket ismi             | `models`, `utils`                       | Küçük harf, sade                         |
+| Dosya ismi             | `main.go`, `utils.go`, `calculation.go` | Küçük harf                               |
+| Struct                 | `Calculation`                           | PascalCase, Exported                     |
+| Struct Fields          | `FirstNumber`, `SecondNumber`           | PascalCase, Exported                     |
+| Fonksiyon              | `getNumber()`, `getOperation()`         | camelCase, unexported                    |
+| Fonksiyon (paket dışı) | `Add()`, `Subtract()`, `Multiply()`     | PascalCase, exported                     |
+| Değişken               | `firstNumber`, `secondNumber`, `result` | camelCase, küçük harfle başlar           |
+| CLI Input              | `bufio.NewReader`                       | Kullanıcıdan input almak için kullanıldı |
+| Error Handling         | `strconv.ParseFloat` ve sıfıra bölme    | Hataları yönetiyor                       |
+| Channel / Goroutine    | Şu an yok ama eklenebilir               | Daha ileri seviyede eklenebilir          |
 
 
