@@ -1,0 +1,85 @@
+// paket isimleri her zaman kucuk harf olmali
+// alt cizgi yok camelCase  kullanilir
+//package main
+
+//2-DOSYA ISIMLERI NAMIG KURALLARI
+// dosya isimlendirme kesinlikle kucuk olmali,kisa ,bolsuk yok
+//math.go
+//calculation.go
+//input.go
+
+//3. Struct / Type / Interface isimleri
+//PascalCase
+// Büyük harfle başlar = dışarıya açılır (export)
+// Küçük harfle başlarsa internal olur (paket içinde)
+// //type Calculation struct {
+//     FirstNumber  float64
+//     SecondNumber float64
+//     Operation    string
+//     Result       float64
+// }
+
+//Struct adı büyük harf → başka paketlerden erişilebilir
+
+//Alanlar (fields) büyük harf → dışarıdan da erişilebilir
+
+//4. FONKSIYON ISIMLERI
+//Paket içinde kullanılacaksa → küçük harf (unexported)
+
+//Paket dışına açılacaksa → PascalCase (exported)
+
+//func Add(a, b float64) float64 {}          // Exported DISA GIDILCIEKSE ERILECEKSE
+//func subtractInternal(a, b float64) float64 {} // Unexported UNEXPORTED
+
+// 5.DEGISKEN ISIMLERI
+// 🔶 camelCase
+// 🔶 Küçük harfle başlar
+// 🔶 Kısa ama anlamlı
+// 🔶 Çok kullanılan yerlerde tek harf olur (Go kültürü)
+
+// firstNumber := 10
+// secondNumber := 5
+// operation := "+"
+// result := 15
+
+// a := 10
+// b := 20
+// op := "+"
+
+//6. Constants (sabitler)
+// Go’da iki stil kabul edilir:
+
+// ✔ PascalCase (export edilirse)
+// const Pi = 3.14
+
+// ✔ hepsi büyük harf (genelde kullanılmaz ama kabul)
+// const MAX_RETRY = 3
+
+// 🟦 7. Interface isimleri
+
+// Kural:
+// 🔶 PascalCase
+// 🔶 Genelde -er ile biter
+
+// Örnek:
+
+// type Calculator interface {
+//     Calculate() float64
+// }
+
+// 🟩 8. Kanal, goroutine, reader isimleri
+
+// CLI + hesap makinesi örneği:
+
+// resultChan := make(chan float64)
+// go calculateAsync(calc, resultChan)
+
+// reader := bufio.NewReader(os.Stdin)
+
+// Temiz isimlendirme → kısa ve anlamlı.
+
+
+
+
+
+
