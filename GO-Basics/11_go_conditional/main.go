@@ -26,7 +26,7 @@ func main() {
 		if settings["twoFA"] {
 			fmt.Println("2FA doğrulandı.")
 
-			if balance > 500 {
+			if balance > 400 {
 				fmt.Println("Hesap bakiyesi:", balance)
 
 				// --- SLICE içinde arama + IF ---
