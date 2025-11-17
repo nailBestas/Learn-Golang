@@ -1,0 +1,11 @@
+| Operatör | Açıklama            | Örnek   |
+| -------- | ------------------- | ------- |
+| `+`      | Toplama             | `a + b` |
+| `-`      | Çıkarma             | `a - b` |
+| `*`      | Çarpma              | `a * b` |
+| `/`      | Bölme               | `a / b` |
+| `%`      | Modül (kalan)       | `a % b` |
+| `++`     | Artırma (1 ekler)   | `a++`   |
+| `--`     | Azaltma (1 çıkarır) | `a--`   |
+
+overflow -tasma underflow alt tasma 
