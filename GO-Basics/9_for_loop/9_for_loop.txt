@@ -1,0 +1,93 @@
+Go’da Döngü Yapısı
+
+Go’da sadece bir tür döngü var: for.
+Ama kullanım şekline göre tüm klasik döngü tiplerini oluşturabilirsin:
+
+Basit for
+
+while benzeri for
+
+sonsuz döngü
+
+range ile for
+
+🔹 2️⃣ Basit For Döngüsü (C tarzı)
+for i := 0; i < 5; i++ {
+    fmt.Println("i =", i)
+}
+
+
+Başlangıç: i := 0
+
+Koşul: i < 5
+
+Adım: i++
+
+Çıktı: 0,1,2,3,4
+
+🔹 3️⃣ While Benzeri For
+
+Go’da while yok, ama şu şekilde yazılır:
+
+i := 0
+for i < 5 {
+    fmt.Println("i =", i)
+    i++
+}
+
+
+Koşul kontrol edilir
+
+Başlangıç ve artış manuel
+
+🔹 4️⃣ Sonsuz Döngü
+for {
+    fmt.Println("Sonsuz döngü, break ile çıkılır")
+    break // yoksa sonsuz döngü olur
+}
+
+
+Genellikle menü sistemleri veya server loop’larında kullanılır
+
+🔹 5️⃣ Range ile For (Diziler, Slice, Map, String)
+numbers := []int{10, 20, 30}
+
+for index, value := range numbers {
+    fmt.Println("Index:", index, "Value:", value)
+}
+
+// Map örneği
+ages := map[string]int{"Alice": 25, "Bob": 30}
+for name, age := range ages {
+    fmt.Println(name, "yaşı", age)
+}
+
+
+range → iterable veri yapılarında kullanılır
+
+Dizilerde, slice’larda index ve value döndürür
+
+Map’lerde key ve value döndürür
+
+🔹 6️⃣ Break ve Continue
+for i := 0; i < 10; i++ {
+    if i == 5 {
+        break   // döngüyü sonlandırır
+    }
+    if i%2 == 0 {
+        continue // sonraki adıma geçer
+    }
+    fmt.Println(i) // sadece tek sayılar yazılır
+}
+
+
+break → döngüyü tamamen bitirir
+
+continue → döngünün bir sonraki adımına geçer
+
+🔹 7️⃣ Özet
+Tip	Örnek	Kullanım
+Basit for	for i:=0;i<5;i++	Klasik C tarzı
+While tarzı	for i<5	Koşul odaklı
+Sonsuz	for {}	Menü / server loop
+Range	for i,v := range slice	Slice, array, map, string
