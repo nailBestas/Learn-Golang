@@ -1,0 +1,37 @@
+✔ if
+if şart {
+}
+
+✔ if – else
+if şart {
+} else {
+}
+
+✔ if – else if – else
+if şart1 {
+} else if şart2 {
+} else {
+}
+
+✔ İç içe if (nested if)
+
+Bir if'in içinde başka bir if:
+
+if a > 0 {
+    if a < 10 {
+        fmt.Println("Aralıkta")
+    }
+}
+
+✔ Short statement (Go’ya ÖZEL özelliktir)
+if num := getNumber(); num > 10 {
+    fmt.Println("Büyük")
+}
+
+
+num sadece if bloğu içinde yaşar.
+
+✔ Koşullarda AND / OR / NOT
+if age > 18 && age < 65 {}
+if age < 18 || vip == true {}
+if !isActive {}
