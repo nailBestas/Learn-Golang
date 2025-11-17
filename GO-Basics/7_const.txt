@@ -1,0 +1,38 @@
+🔵 Go’da Constant (Sabit) Nedir?
+
+Sabit (const):
+Program çalışırken değiştirilemeyen değerlerdir.
+Bir kere tanımlanır → sonsuza kadar aynı kalır.
+
+ Go Sabitlerinin Özellikleri
+✔ 1. const ile tanımlanır
+const PI = 3.14
+
+✔ 2. Sadece compile-time bilinen değerler olabilir
+
+Aşağıdakine izin verilmez:
+
+const x = math.Sqrt(4) // HATA
+
+✔ 3. Tip belirtilmeyebilir
+
+Go kendisi otomatik tür atar.
+
+const a = 5       // type: untyped int
+const b float64 = 5 // type: float64
+
+✔ 4. Birden çok sabit tek blokta tanımlanabilir
+const (
+    MaxUser = 100
+    AppName = "Calculator"
+)
+
+✔ 5. iota kullanarak artan sabit oluşturabilirsin
+
+iota her satırda artan bir sayaçtır
+
+const (
+    A = iota // 0
+    B        // 1
+    C        // 2
+)
