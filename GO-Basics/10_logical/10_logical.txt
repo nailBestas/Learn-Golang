@@ -1,0 +1,5 @@
+| Operatör | Anlamı          | Açıklama                           |               |                                            |
+| -------- | --------------- | ---------------------------------- | ------------- | ------------------------------------------ |
+| `&&`     | **VE (AND)**    | İki şartın da doğru olması gerekir |               |                                            |
+| `        |                 | `                                  | **VEYA (OR)||** | Şartlardan birinin doğru olması yeterlidir |
+| `!`      | **DEĞİL (NOT)** | Şartı tersine çevirir              |               |                                            |
