@@ -1,8 +1,8 @@
 // package main dosya giris cikis icin kullanilir derleyiceye bu dosyadan basla demek
 package main
 
-import f "fmt"
+import "fmt"
 
 func main() {
-	f.Println("Hello world")
+	fmt.Println("Hello world")
 }
