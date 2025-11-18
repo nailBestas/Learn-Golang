@@ -1,13 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type Address struct {
 	City string
 	Zip  int
 }
+
 type User struct {
 	Name    string
 	Age     int
@@ -15,17 +14,18 @@ type User struct {
 	Address Address
 }
 
-// method (value receiver) ir struca bagli fonksiyonlardir
+// Method (value receiver)
 func (u User) Info() {
-	fmt.Println("%s (%d) | Premium: %v | City: %s\n", u.Name, u.Age, u.Premium, u.Address.City)
+	fmt.Printf("%s (%d) | Premium: %v | City: %s\n",
+		u.Name, u.Age, u.Premium, u.Address.City)
 }
 
-// pointer receiver
+// Method (pointer receiver)
 func (u *User) Upgrade() {
 	u.Premium = true
 }
 
-// constructor
+// Constructor
 func NewUser(name string, age int, city string) User {
 	return User{
 		Name:    name,
@@ -33,29 +33,31 @@ func NewUser(name string, age int, city string) User {
 		Premium: false,
 		Address: Address{
 			City: city,
-			Zip:  56000,
+			Zip:  34000,
 		},
 	}
 }
+
 func main() {
 
-	//constructor kullanarak user olusturma
-	u1 := NewUser("Nail", 40, "siirt")
-	u2 := NewUser("Ayse", 38, "Sori")
+	// Constructor kullanarak user oluşturma
+	u1 := NewUser("Nail", 25, "İstanbul")
+	u2 := NewUser("Ayşe", 30, "Ankara")
 
-	//slice icinde struct
+	// Slice içinde struct
 	users := []User{u1, u2}
 
-	//Map icinde struct
+	// Map içinde struct
 	mp := map[string]User{
 		"nail": u1,
 		"ayse": u2,
 	}
 
-	//Kullanici bilgilerini yazdirma
+	// Kullanıcı bilgilerini yazdırma
 	for _, user := range users {
 		user.Info()
 	}
+
 	fmt.Println("\nNail Premium yapılıyor...")
 	u1.Upgrade()
 	u1.Info()
@@ -64,5 +66,4 @@ func main() {
 	if user, ok := mp["nail"]; ok {
 		user.Info()
 	}
-
 }
