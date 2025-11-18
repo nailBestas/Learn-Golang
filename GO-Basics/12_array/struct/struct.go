@@ -1,23 +1,23 @@
 package main
 
-import (
-	"fmt"
-)
+// // import (
+// // 	"fmt"
+// // )
 
-type Address struct {
-	City string
-	Zip  int
-}
+// type Address struct {
+// 	City string
+// 	Zip  int
+// }
 
-type User struct {
-	Name string
-	Addr Address
-}
+// type User struct {
+// 	Name string
+// 	Addr Address
+// }
 
 // type User struct {
 // 	Name    string
 // 	Age     int
-// 	Premium bool
+// 	Premium boo
 // }
 // type Kisi struct {
 // 	Isim string
