@@ -1,0 +1,29 @@
+package main
+
+import "fmt"
+
+// Struct TANIMLAMA: 
+// type İsim struct { ... }
+type Kisi struct {
+    ad    string
+    yas   int
+    sehir string
+}
+
+func main() {
+    // Struct KULLANIMI:
+    var kisi1 Kisi                 // 1. YOL: Önce tanımla, sonra değer ata
+    kisi1.ad = "Ahmet"
+    kisi1.yas = 30
+    kisi1.sehir = "Ankara"
+    
+    // 2. YOL: Doğrudan değerleriyle oluştur (SENİN SORDUĞUN)
+    kisi2 := Kisi{
+        ad:    "Mehmet",  // field: value şeklinde
+        yas:   25,
+        sehir: "İstanbul",
+    }
+    
+    fmt.Println(kisi1) // {Ahmet 30 Ankara}
+    fmt.Println(kisi2) // {Mehmet 25 İstanbul}
+}
