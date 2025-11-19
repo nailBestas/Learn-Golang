@@ -22,6 +22,10 @@ type Dikdortgen struct {
 // method
 // Metod, bir struct ile ilişkili fonksiyondur.
 // Yani normal fonksiyon gibi çalışır ama o struct’a ait bir özellikmiş gibi davranır.
+// RECEIVER'ın detayları:
+// (d diktortgen) = receiver
+// d = receiver değişkeni (istediğimiz ismi verebiliriz)
+// Dikdortgen = receiver'ın tipi
 func (x Dikdortgen) Alan() int {
 	return x.en * x.boy
 }
