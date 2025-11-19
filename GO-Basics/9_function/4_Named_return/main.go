@@ -4,6 +4,9 @@ import (
 	"fmt"
 )
 
+// Named return values: Dönüş değerlerine isim veriyorum
+// Burada "bolum" ve "kalan" return değişkenleri olarak tanımlanıyor
+// Bu yaklaşımın avantajı: Documentation görevi görür, kod kendini açıklar
 func bolmeIslemi(bolunen, bolen int) (bolum int, kalan int) {
 	bolum = bolunen / bolen
 	kalan = bolunen % bolum
