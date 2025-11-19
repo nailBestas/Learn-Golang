@@ -1,0 +1,31 @@
+========== BANKA SİSTEMİ ==========
+
+1. NORMAL İŞLEM:
+🏦 PARA ÇEKME İŞLEMİ: Bakiye: 5000.00 TL, Çekilecek: 1000.00 TL
+✅ Başarılı! 1000.00 TL çekildi
+🎊 İşlem tamamlandı!
+💰 Son bakiye: 4000.00 TL
+📝 İşlem günlüğüne kaydedildi
+
+2. YETERSİZ BAKİYE:
+🏦 PARA ÇEKME İŞLEMİ: Bakiye: 500.00 TL, Çekilecek: 1000.00 TL
+🚨 ACİL DURUM: 💸 Yetersiz bakiye! Hesapta yeterli para yok!
+✅ Sistem güvende, işleme devam ediliyor...
+💰 Son bakiye: 500.00 TL
+📝 İşlem günlüğüne kaydedildi
+
+3. GÜVENLİK İHLALİ:
+🏦 PARA ÇEKME İŞLEMİ: Bakiye: 50000.00 TL, Çekilecek: 15000.00 TL
+🚨 ACİL DURUM: ❌ Güvenlik ihlali! 10.000 TL üstü çekim yapılamaz!
+✅ Sistem güvende, işleme devam ediliyor...
+💰 Son bakiye: 50000.00 TL
+📝 İşlem günlüğüne kaydedildi
+
+4. YENİ NORMAL İŞLEM:
+🏦 PARA ÇEKME İŞLEMİ: Bakiye: 3000.00 TL, Çekilecek: 500.00 TL
+✅ Başarılı! 500.00 TL çekildi
+🎊 İşlem tamamlandı!
+💰 Son bakiye: 2500.00 TL
+📝 İşlem günlüğüne kaydedildi
+
+========== SİSTEM ÇALIŞMAYA DEVAM EDİYOR ==========
